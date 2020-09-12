@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Главное меню</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style1.css')}}">
+	</head>
+	
+	<body style="background: #78B2D7 url(static/img/back1.jpg)" > <!--class="back_main"-->
+		<font color="black" face="Arial">
+			<div align="right">
+				<font size="2" color="white" face="Arial">
+				Курсовая работа по дисциплине "Базы данных". 
+				Подготовил студент группы РК6-41б Петричук А.О. Вариант 8.
+				</font>
+			</div>
+		
+		
+			<div id="center" align="center" style="width: 1842px; height: 45px; background: #0F4B65; margin-left: -10px; margin-top: 10px; padding: 40px;">
+				<font color="#B3D2E6" size="40px">ГЛАВНОЕ МЕНЮ</font>
+			</div>
+		
+		
+		 <!--кнопка1-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				<form method='POST' action="/1annual_report">
+					<label for="grind">Запустить процедуру и посмотреть годовой отчет. Ведите год:</label>
+					<input type="number" min="2000" max="2020" step="1" id="grind" name="grind"><br><br>
+				    <input type="submit" value="Посмотреть" name="send">
+				</form>
+			</div> 
+		<!--кнопка2-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				Посмотреть отчет об открытых вакансиях:<br>
+				<a href="/menu?point=2"><p><input value='Посмотреть' name='send' type='submit'></p></a>
+			</div> 
+		<!--кнопка3-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				<!--<form method='POST' action='/menu'>
+					<label for=grind> Посмотреть отчет о движении вакансий за год. Введите год:</label>
+					<input type=text _year=grind name=grind>
+					<p><input value="Посмотреть" name="send" type="submit"></p>
+				</form>-->
+				<form method='POST' action="/3vac_movement">
+					<label for="grind">Посмотреть отчет о движении вакансий за год. Введите год:</label>
+					<input type="number" min="2000" max="2020" step="1" id="grind" name="grind"><br><br>
+				    <input type="submit" value="Посмотреть" name="send">
+				</form>
+				<!--<form method='POST' action="/3vac_movement.html">
+				  <label for="grind">Year:</label><br>
+				  <input type="number" min="2000" max="2020" step="1" id="grind1" name="grind"><br>
+				  <input value="Посмотреть" name="send" type="submit">
+				</form>  
+				<form id="send" method='POST'> 
+				   <p><input placeholder="Год" type="number" min="2000" max="2020" step="1" id="grind" name="grind"></p>
+				   <p><button formaction="/menu?point=3" name="send" type="submit">Посмотреть</button></p>
+				</form> -->
+			</div> 
+		<!--кнопка4-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				<form method='POST' action="/4youngest">
+					<label for="grind">Посмотреть данные о самом молодом сотруднике отдела. Введите название отдела:</label>
+					<input type="text" id="grind" name="grind"><br><br>
+				    <input type="submit" value="Посмотреть" name="send">
+				</form>
+			</div> 
+		<!--кнопка5-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				Посмотреть все сведения о позициях штатного расписания, на которые ещё ни разу не открывались вакансии:<br>
+				<a href="/menu?point=5"><p><input value='Посмотреть' name='send' type='submit'></p></a>
+			</div> 
+		<!--кнопка6-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				<form method='POST' action="/6vac_didnt_open_in_year">
+					<label for="grind">Показать позиции, на которые не открывались вакансии в течение года. Введите год:</label>
+					<input type="number" min="2000" max="2020" step="1" id="grind" name="grind"><br><br>
+				    <input type="submit" value="Посмотреть" name="send">
+				</form>
+			</div>
+		<!--кнопка7-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				Показать все сведения о позиции штатного расписания, на которую чаще всего открывались вакансии:
+				<a href="/menu?point=7"><p><input value='Посмотреть' name='send' type='submit'></p></a>
+			</div>
+		<!--кнопка8 выход-->
+			<div class="block1" align="left" style="width: 900px; height: 60px; background: #B3D2E6; margin: 20px; margin-left: 900px; padding: 7px;">
+				Нажмите для выхода:<br>
+				<a href="/menu?point=exit"><p><input value='Выход' name='send' type='submit'></p></a>
+			</div> 
+		
+		
+		
+		
+			<div align="center"><em>
+				<font size="3" color="white" face="Arial">Москва, 2020 г.</font>
+			</em></div>
+		</font>
+	</body>
+</html>

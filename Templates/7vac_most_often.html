@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Позиция чаще всего</title>
+		<style type="text/css">
+		   .header { 
+			width: 1842px;				
+			height: 45px; 				
+			background: #0F4B65;
+			margin-left: -10px;
+			margin-top: 10px;
+			padding: 40px;
+			font-size: 40px;
+			font-family: Arial;
+		   }
+		</style> 
+	</head>
+
+	<body bgcolor=#78B2D7 text=black>
+		<body>
+			<div align="left">
+				<font size="3" color="white" face="Arial"> 
+					<a href="/menu"> <<- Назад </a>
+				</font>
+			</div>
+		</body>
+		<body>
+			<div id="center" class="header" align="center"><font color="#B3D2E6">ПОЗИЦИЯ, НА КОТОРУЮ ВАКАНСИИ ОТКРЫВАЛИСЬ ЧАЩЕ ВСЕГО</font></div>
+		</body>
+		<br><br>
+		<font size="3" face="Arial"> 
+			<table bgcolor="#B3D2E6" border=1 width=100% size="4" face="Arial">
+				<tr>
+					<td align = center> код отдела </td>
+					<td align = center> название позиции </td>
+					<td align = center> минимальная - максимальная <br> зарплата</td>
+				</tr>
+				{%for staffing_table in results%}
+				<tr>
+					<td align=center>{{staffing_table['id_struct']}}</td>
+					<td align=center>{{staffing_table['unit']}}</td>
+					<td align=center>{{staffing_table['minmax_salary']}}</td>
+				</tr>
+				{% endfor %}
+		
+	</body>
+</html>

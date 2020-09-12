@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Годовой отчет движения вакансий</title>
+		<style type="text/css">
+		   .header { 
+			width: 1842px;				/* ширина блока */
+			height: 45px; 				/* Высота блока */
+			background: #0F4B65;
+			margin-left: -10px;
+			margin-top: 10px;
+			padding: 40px;
+			font-size: 40px;
+			font-family: Arial;
+		   }
+		</style> 
+	</head>
+
+	<body bgcolor=#78B2D7 text=black>
+		<body>
+			<div align="left">
+				<font size="3" color="white" face="Arial"> 
+					<a href="/menu"> <<- Назад </a>
+				</font>
+			</div>
+		</body>
+		<body>
+			<div id="center" class="header" align="center"><font color="#B3D2E6">ГОДОВОЙ ОТЧЕТ О ДВИЖЕНИИ ВАКАНСИЙ(процедура)</font></div>
+		</body>
+		<br><br>
+		<div>
+				<font size="4" face="Arial">Сообщение:	{{mes}}</font> <br><br>
+				<font size="4" face="Arial">Отчет предоставлен за год:	{{grind}}</font> 
+		</div>
+		<br><br>
+		<font size="3" face="Arial"> <table bgcolor="#B3D2E6" border=1 width=100% size="4" face="Arial">
+			<tr>
+				<td align = center> id позиции расписания </td>
+				<td align = center> код подразделения </td>
+				<td align = center> название должности </td>
+				<td align = center> сколько раз за год <br>открывалась вакансия </td>
+				<td align = center> среднее количество дней,<br>которое вакансия была открыта </td>
+			</tr>
+			{%for report in results%}
+			<tr>
+				<td align=center>{{report['id_rep']}}</td>
+				<td align=center> {{report['id_structure']}}</td>
+				<td align=center>{{report['name_vac']}}</td>
+				<td align=center> {{report['num_open']}}</td>
+				<td align=center>{{report['avg_num_days']}}</td>
+			</tr>
+			{% endfor %}
+		</font>
+	</body>
+</html>

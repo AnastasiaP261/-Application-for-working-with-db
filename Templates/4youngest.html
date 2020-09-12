@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Самый молодой</title>
+		<style type="text/css">
+		   .header { 
+			width: 1842px;				/* ширина блока */
+			height: 45px; 				/* Высота блока */
+			background: #0F4B65;
+			margin-left: -10px;
+			margin-top: 10px;
+			padding: 40px;
+			font-size: 40px;
+			font-family: Arial;
+		   }
+		</style> 
+	</head>
+
+	<body bgcolor=#78B2D7 text=black>
+		<body>
+			<div align="left">
+				<font size="3" color="white" face="Arial"> 
+					<a href="/menu"> <<- Назад </a>
+				</font>
+			</div>
+		</body>
+		<body>
+			<div id="center" class="header" align="center"><font color="#B3D2E6">СВЕДЕНИЯ О САМОМ МОЛОДОМ СОТРУДНИКЕ ОТДЕЛА</font></div>
+		</body>
+		<br><br>
+		<div>
+				<font size="4" face="Arial">Поиск выполнен среди сотрудников отдела:	{{grind}}</font> 
+		</div>
+		<br><br>
+		<font size="3" face="Arial"> <table bgcolor="#B3D2E6" border=1 width=100% size="4" face="Arial">
+			<tr>
+				<td align = center> id работника </td>
+				<td align = center> ФИО </td>
+				<td align = center> дата рождения </td>
+				<td align = center> адрес </td>
+				<td align = center> образование</td>
+				<td align = center> заработная плата</td>
+				<td align = center> дата устройства</td>
+				<td align = center> дата увольнения</td>
+				<td align = center> id отдела</td>
+			</tr>
+			{%for worker in results%}
+			<tr>
+				<td align=center>{{worker['id_worker']}}</td>
+				<td align=center> {{worker['FName_worker']}}</td>
+				<td align=center>{{worker['birth']}}</td>
+				<td align=center>{{worker['address_w']}}</td>
+				<td align=center> {{worker['educat']}}</td>
+				<td align=center>{{worker['salary']}}</td>
+				<td align=center>{{worker['date_res']}}</td>
+				<td align=center> {{worker['date_dis']}}</td>
+				<td align=center>{{worker['id_struct']}}</td>
+			</tr>
+			{% endfor %}
+		</font>
+	</body>
+</html>
